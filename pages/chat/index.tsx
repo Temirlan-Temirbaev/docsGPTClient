@@ -33,7 +33,7 @@ const Chat = () => {
     
     const res = await fetch(`https://docs-gpt-client.vercel.app/api/generate-answer`, {
       method : 'POST',
-      headers : {'Access-Control-Allow-Origin' : 'application/json'},
+      headers : {'Сontent-Type' : 'application/json'},
       body : JSON.stringify({prompt : input})
     }).then(res => res.json())
     if(res.text){
