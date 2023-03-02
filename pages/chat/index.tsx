@@ -5,6 +5,7 @@ import {  useState } from "react";
 import useStateRef from "react-usestateref";
 import userIcon from '@/public/user.png'
 import Image from "next/image";
+import { Configuration, OpenAIApi } from "openai";
 interface Message{
   from : string,
   content : string
@@ -31,14 +32,22 @@ const Chat = () => {
     setMessages([...messagesRef.current, myMessage])
     setMessages([...messagesRef.current, loadingMessage])
     
-    const res = await fetch(`/api/generate-answer`, {
-      method : 'POST',
-      headers : {'Access-Control-Allow-Origin' : 'application/json'},
-      body : JSON.stringify({prompt : input})
-    }).then(res => res.json())
-    if(res.text){
+    const config = new Configuration({
+      apiKey : process.env.NEXT_PUBLIC_CHATGPT_KEY
+    })
+    const openai = new OpenAIApi(config);
+    const aiResult = await openai.createCompletion({
+      model : 'text-davinci-003',
+      prompt : input,
+      temperature : 0.2,
+      max_tokens : 2048,
+      frequency_penalty : 0.5,
+      presence_penalty : 0
+    })
+    const res = aiResult.data.choices[0].text?.trim() || "Извините, но на данный момент все сервера перегружены"
+    if(res){
       setMessages(messagesRef.current.filter(msg => msg !== loadingMessage))
-      const botMessage : Message= {from : 'gpt', content : res.text.trim().replace('?', '').replaceAll('\n', '')};
+      const botMessage : Message= {from : 'gpt', content : res.trim().replace('?', '').replaceAll('\n', '')};
       setMessages([...messagesRef.current, botMessage])
     }
     setInput('')
