@@ -1,7 +1,0 @@
-{
-  "functions": {
-    "api/generate-answer.ts": {
-      "maxDuration": 60
-    }
-  }
-}
