@@ -31,9 +31,9 @@ const Chat = () => {
     setMessages([...messagesRef.current, myMessage])
     setMessages([...messagesRef.current, loadingMessage])
     
-    const res = await fetch(`https://docs-gpt-client.vercel.app/api/generate-answer`, {
+    const res = await fetch(`/api/generate-answer`, {
       method : 'POST',
-      headers : {'Сontent-Type' : 'application/json'},
+      headers : {'Access-Control-Allow-Origin' : 'application/json'},
       body : JSON.stringify({prompt : input})
     }).then(res => res.json())
     if(res.text){

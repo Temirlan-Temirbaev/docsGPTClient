@@ -25,9 +25,6 @@ export default async function handler(req : GenerateNextApiRequest, res : NextAp
     frequency_penalty : 0.5,
     presence_penalty : 0
   })
-  console.log(prompt);
-  console.log(aiResult.data.choices[0]);
-  
   const response = aiResult.data.choices[0].text?.trim() || "Извините, но на данный момент все сервера перегружены"
   res.status(200).json({text : response})
 }
