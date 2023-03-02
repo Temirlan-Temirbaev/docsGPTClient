@@ -1,0 +1,48 @@
+.slogan{
+  width : 100%;
+  margin-top: 40px;
+  text-align: center;
+}
+
+.slogan__text h1{
+  font-size: calc(18px + (24 - 18) * ((100vw - 320px) / (1200 - 365)));
+  font-weight: bold;
+}
+.slogan__text h1, .slogan__text h4{
+  overflow: hidden;
+}
+.text{
+  position: relative;
+  display: inline-block;
+  transform: translateY(100%);
+  animation-name: sloganOnInit;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+@keyframes sloganOnInit {
+  from{
+    transform: translateY(100%);
+  }
+  to{
+    transform: translateY(0);
+  }
+}
+.slogan__text h4{
+  opacity: 0.7;
+  font-weight: 300;
+}
+
+.blink{
+  webkit-animation: blink 0.8s linear infinite;
+  animation: blink 0.8s linear infinite;
+}
+@-webkit-keyframes blink {
+  50% { color: rgb(34, 34, 34); }
+  51% { color: rgba(34, 34, 34, 0); }
+  100% { color: rgba(34, 34, 34, 0); }
+}
+@keyframes blink {
+  50% { color: rgb(34, 34, 34); }
+  51% { color: rgba(34, 34, 34, 0); }
+  100% { color: rgba(34, 34, 34, 0); }
+}

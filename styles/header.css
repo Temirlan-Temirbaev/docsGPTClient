@@ -1,0 +1,49 @@
+.header__inner{
+  display: flex;
+  height: 80px;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+h1{
+  margin: 0;
+}
+.header__inner div{
+  display: flex;
+}
+.header__logo{
+  margin-right: 40px;
+}
+.langs{
+  align-items: center;
+}
+.lang__item{
+  color: black;
+  text-decoration: underline;
+  margin-right: 15px;
+}
+.lang__item:last-child{
+  margin-right: 0;
+}
+.icons{
+  display: flex;
+  cursor: pointer;
+}
+.search__icon{
+  margin-right: 15px;
+}
+.gpt__logo, .search__icon{
+  min-height: 40px;
+  min-width: 40px;
+}
+@media screen and (max-width:630px) {
+  .langs{
+    visibility: hidden;
+    height: 0;
+    width: 0;
+  }
+  .gpt__logo, .search__icon{
+    min-height: 50px;
+    min-width: 50px;
+  }
+}

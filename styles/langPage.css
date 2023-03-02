@@ -1,0 +1,62 @@
+.lang__term-name{
+  color: black;
+  font-size: calc(16px + (32 - 16) * ((100vh - 320px) / (1200 - 320)));
+  font-weight: 400;
+  font-family: 'JetBrains Mono', monospace;
+}
+  .lang__page-name h1{
+    font-family: 'JetBrains Mono', monospace;
+  }
+.terms{
+  display: flex;
+  flex:0 1 30%;
+  margin-top: 40px;
+  flex-wrap: wrap;
+  margin-left: 20px;
+  justify-content: center;
+}
+.lang__term{
+  display: flex;
+  width: 30%;
+  margin-bottom: 40px;
+  margin-right: 20px;
+  opacity: 0;
+  height: 25vh;
+  padding: 15px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border:1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all linear 0.3s;
+  animation-name: onInit;
+  animation-duration: 2s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+.lang__term:hover{
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.37);
+}
+
+@media  screen and (max-width: 830px) {
+  .lang__term{
+    width: 45%;
+  }
+}
+@media screen and (max-width: 580px){
+  .lang__term{
+    margin-right: 0;
+    width: 100%;
+  }
+}
+
+
+@keyframes onInit{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}

@@ -1,0 +1,9 @@
+.term__box{
+  border-radius: 20px;
+  padding: 15px;
+}
+code{
+  font-family: 'JetBrains Mono', monospace;}
+.term__info{
+  font-family: 'JetBrains Mono', monospace;
+}

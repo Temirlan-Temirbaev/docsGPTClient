@@ -1,0 +1,57 @@
+.langList{
+  display: flex;
+  flex: 0 1 30%;
+  margin-top: 40px;
+}
+.lang{
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: 25px;
+  margin-bottom: 40px;
+  text-decoration: none;
+  padding: calc(5px + (20 - 5) * ((100vw - 320px) / (1200 - 365)));
+  color: black;
+  width: 33%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border:1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  transition: all linear 0.3s;
+}
+.lang:hover{
+  box-shadow: 0 8px 10px 0 rgba(0, 0, 0, 0.37);
+
+}
+
+.lang__description{
+  opacity: 0.8;
+  font-weight: 500;
+  font-size: 16px;
+}
+@media screen and (max-width: 785px){
+  .langList{
+    flex : 0 1 50%;
+    flex-wrap: wrap;
+  }
+  .lang{
+    width: 45%;
+  }
+}
+@media screen and (max-width:900px){
+  .lang{padding: 20px;}
+
+}
+@media screen and (max-width: 560px){
+  .langList{
+    flex : 0 1 1;
+  }
+  .lang{
+    width:100%;
+  }
+ 
+  .lang__description{
+    margin-bottom: 10px;
+  }
+}
