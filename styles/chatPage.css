@@ -61,6 +61,7 @@
 .message{
   display: flex;
   margin-bottom: 15px;
+  overflow: auto;
 }
 .message-content{
   display: flex;
@@ -69,6 +70,8 @@
   white-space: pre-wrap;
   padding: 15px;
   border-radius: 0.5rem;
+  overflow: auto;
+
 }
 .message-content p {
   color: rgb(55 65 81);
