@@ -12,7 +12,13 @@ h1{
   display: flex;
 }
 .header__logo{
+  display: flex;
+  height: 80px;
+  align-items: center;
   margin-right: 40px;
+}
+.header__logo h1 {
+  margin-right: 15px;
 }
 .langs{
   align-items: center;
@@ -45,5 +51,8 @@ h1{
   .gpt__logo, .search__icon{
     min-height: 50px;
     min-width: 50px;
+  }
+  .header__logo img{
+    display: none;
   }
 }

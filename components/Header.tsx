@@ -1,6 +1,8 @@
 import { useLangStore } from "@/store/langStore"
 import Link from "next/link"
+import Image from "next/image";
 import { useEffect } from "react";
+import logo from '@/public/logo.png'
 export const Header = ()  => {
 const {langs, getLangs} = useLangStore();
   useEffect(() => {
@@ -10,7 +12,7 @@ const {langs, getLangs} = useLangStore();
 return <header>
     <div className="header__inner">
       <div>
-        <Link href="/" replace className="header__logo" style={{color : "black"}}><h1>DocsGPT</h1></Link>
+        <Link href="/" replace className="header__logo" style={{color : "black"}}><h1>DocsGPT</h1><Image src={logo} alt="" height={50} width={50} /></Link>
         <div className="langs">
           {langs.slice(0,3).map((lang : any)=> {
             return <Link href={`/lang/${lang._id}`} className="lang__item" key={lang._id}>{lang.name.charAt(0).toUpperCase() + lang.name.slice(1)}</Link>

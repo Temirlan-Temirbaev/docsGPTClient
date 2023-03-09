@@ -13,7 +13,7 @@ interface Result {
 const Search = () => {
   const [input, setInput] = useState<string>('');
   const [loading, setLoading] = useState<boolean>(false)
-  const [result, setResult] = useState<Result[]>();
+  const [result, setResult] = useState<Result[]>([]);
   const onSearchButtonClick = async () => {
     setLoading(true)
     const res = await axios(`${process.env.NEXT_PUBLIC_SERVER_URL}/search/${input}`)
@@ -34,6 +34,7 @@ const Search = () => {
               <h3 className="lang__term-lang">{elem.lang.charAt(0).toUpperCase() + elem.lang.slice(1)}</h3>
             </Link>
           ))}
+          {result.length === 0 && <>Ничего не найдено.</>}
         </div>
       </div>
     </div>
